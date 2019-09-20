@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>test | Hexo</title>
+  <title>Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="test | Hexo">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
@@ -284,9 +284,7 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">test</h1>
+        <article id="post-面试问题" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
@@ -296,7 +294,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-20 19:52:13'>2019-09-20 19:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-20 20:42:42'>2019-09-20 20:35</time>
         
     </div>
     <div class="article-meta">
@@ -318,7 +316,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、prop和attr的区别："><span class="toc-text">一、prop和attr的区别：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、js中深拷贝和浅拷贝的区别？"><span class="toc-text">二、js中深拷贝和浅拷贝的区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Js的原型和原型链？原型链的应用？"><span class="toc-text">三、Js的原型和原型链？原型链的应用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"><span class="toc-text">四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -333,7 +331,27 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="一、prop和attr的区别："><a href="#一、prop和attr的区别：" class="headerlink" title="一、prop和attr的区别："></a><strong>一、prop和attr的区别：</strong></h1><p>对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。</p>
+<p>对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"http://www.baidu.com"</span> target=<span class="string">"_self"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn"</span>&gt;百度&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子里<a>元素的DOM属性有“href、target和class”，这些属性就是<a>元素本身就带有的属性，也是W3C标准里就包含有这几个属性，或者说在IDE里能够智能提示出的属性，这些就叫做固有属性。处理这些属性时，建议使用prop方法。</a></a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#"</span> id=<span class="string">"link1"</span> action=<span class="string">"delete"</span>&gt;删除&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>上述代码里&lt;a&gt;元素的DOM属性有“href、id和action”，很明显，前两个是固有属性，而后面一个“action”属性是我们自己自定义上去的，&lt;a&gt;元素本身是没有这个属性的。这种就是自定义的DOM属性。处理这些属性时，建议使用attr方法。</code></p>
+<h1 id="二、js中深拷贝和浅拷贝的区别？"><a href="#二、js中深拷贝和浅拷贝的区别？" class="headerlink" title="二、js中深拷贝和浅拷贝的区别？"></a>二、js中深拷贝和浅拷贝的区别？</h1><p><strong>浅拷贝</strong>只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。</p>
+<p><strong>深拷贝</strong>会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。</p>
+<p>深拷贝的方法：</p>
+<p>​                1、递归拷贝</p>
+<p>​                2、使用Object.create()方法</p>
+<p>​                3、jquery 有提供一个$.extend也可以实现</p>
+<p>​                4、函数库lodash，也有提供cloneDeep用来实现</p>
+<h1 id="三、Js的原型和原型链？原型链的应用？"><a href="#三、Js的原型和原型链？原型链的应用？" class="headerlink" title="三、Js的原型和原型链？原型链的应用？"></a>三、Js的原型和原型链？原型链的应用？</h1><p>每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，</p>
+<p>如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，于是就这样一直找下去，也就是我们平时所说的原型链的概念。</p>
+<p><strong>应用</strong>：原型链是实现继承的主要方法</p>
+<h1 id="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"><a href="#四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24" class="headerlink" title="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"></a>四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt;arr.length-i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">var</span> c=arr[j];<span class="comment">//交换两个变量的位置</span></span><br><span class="line">                arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> arr.toString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sort([<span class="number">23</span>,<span class="number">45</span>,<span class="number">18</span>,<span class="number">37</span>,<span class="number">92</span>,<span class="number">13</span>,<span class="number">24</span>]));</span><br></pre></td></tr></table></figure>
+
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -346,12 +364,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>test</p>
+    <p><span class="copy-title">文章标题:</span></p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John Doe">John Doe</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-20, 19:52:13</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-20, 19:52:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/20/test/" title="test">http://yoursite.com/2019/09/20/test/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-20, 20:35:02</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-20, 20:42:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/20/面试问题/" title="">http://yoursite.com/2019/09/20/面试问题/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
