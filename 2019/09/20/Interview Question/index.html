@@ -7,7 +7,7 @@
     <meta name="keywords" content="Interview Question, 沫途依晨">
     <meta name="description" content="一、prop和attr的区别：对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
 对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
-1&amp;lt;a href=&#34;http://www.baidu.com&#34;">
+&amp;lt;a href=&#34;http://www.baidu.com&#34; ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +31,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -437,6 +437,20 @@
                 </div>
 
                 
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        597
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        2 分
+                    </div>
+                    
+                
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -451,11 +465,9 @@
             <div id="articleContent">
                 <h1 id="一、prop和attr的区别："><a href="#一、prop和attr的区别：" class="headerlink" title="一、prop和attr的区别："></a>一、prop和attr的区别：</h1><p>对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。</p>
 <p>对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"http://www.baidu.com"</span> target=<span class="string">"_self"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn"</span>&gt;百度&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> target<span class="token operator">=</span><span class="token string">"_self"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"btn"</span><span class="token operator">></span>百度<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span></code></pre>
 <p>这个例子里<a>元素的DOM属性有“href、target和class”，这些属性就是<a>元素本身就带有的属性，也是W3C标准里就包含有这几个属性，或者说在IDE里能够智能提示出的属性，这些就叫做固有属性。处理这些属性时，建议使用prop方法。</a></a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#"</span> id=<span class="string">"link1"</span> action=<span class="string">"delete"</span>&gt;删除&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span> id<span class="token operator">=</span><span class="token string">"link1"</span> action<span class="token operator">=</span><span class="token string">"delete"</span><span class="token operator">></span>删除<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span></code></pre>
 <p><code>上述代码里&lt;a&gt;元素的DOM属性有“href、id和action”，很明显，前两个是固有属性，而后面一个“action”属性是我们自己自定义上去的，&lt;a&gt;元素本身是没有这个属性的。这种就是自定义的DOM属性。处理这些属性时，建议使用attr方法。</code></p>
 <h1 id="二、js中深拷贝和浅拷贝的区别？"><a href="#二、js中深拷贝和浅拷贝的区别？" class="headerlink" title="二、js中深拷贝和浅拷贝的区别？"></a>二、js中深拷贝和浅拷贝的区别？</h1><p><strong>浅拷贝</strong>只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。</p>
 <p><strong>深拷贝</strong>会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。</p>
@@ -467,8 +479,20 @@
 <h1 id="三、Js的原型和原型链？原型链的应用？"><a href="#三、Js的原型和原型链？原型链的应用？" class="headerlink" title="三、Js的原型和原型链？原型链的应用？"></a>三、Js的原型和原型链？原型链的应用？</h1><p>每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时，</p>
 <p>如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，于是就这样一直找下去，也就是我们平时所说的原型链的概念。</p>
 <p><strong>应用</strong>：原型链是实现继承的主要方法</p>
-<h1 id="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"><a href="#四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24" class="headerlink" title="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"></a>四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt;arr.length-i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">var</span> c=arr[j];<span class="comment">//交换两个变量的位置</span></span><br><span class="line">                arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> arr.toString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sort([<span class="number">23</span>,<span class="number">45</span>,<span class="number">18</span>,<span class="number">37</span>,<span class="number">92</span>,<span class="number">13</span>,<span class="number">24</span>]));</span><br></pre></td></tr></table></figure>
-
+<h1 id="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"><a href="#四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24" class="headerlink" title="四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24"></a>四、用JavaScript实现冒泡排序。数据为23、45、18、37、92、13、24</h1><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span>i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">var</span> c<span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//交换两个变量的位置</span>
+                arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>c<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">37</span><span class="token punctuation">,</span><span class="token number">92</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -728,7 +752,7 @@
                         
                             一、prop和attr的区别：对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
 对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
-1&lt;a href="http://www.baidu.com"
+&lt;a href="http://www.baidu.com" 
                         
                     </div>
                     <div class="publish-info">
@@ -881,6 +905,9 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">597</span>&nbsp;字
+            
             
             
             
@@ -946,6 +973,15 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/qsx-motuu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1069319584@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
 
 
@@ -953,6 +989,9 @@
 
 
 
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1069319584" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1069319584" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
 
 
